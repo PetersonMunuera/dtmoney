@@ -8,6 +8,28 @@ createServer({
   models: {
     transaction: Model,
   },
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'Desenvolvimento de site',
+          amount: 6000,
+          type: 'deposit',
+          category: 'Dev',
+          createdAt: new Date('2020-10-2 09:00:00')
+        },
+        {
+          id: 2,
+          title: 'Aluguel',
+          amount: 800,
+          type: 'withdraw',
+          category: 'Casa',
+          createdAt: new Date('2020-10-2 09:00:00')
+        },
+      ]
+    })
+  },
   routes() {
     this.namespace = 'api'
 

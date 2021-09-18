@@ -30,7 +30,6 @@ export function NewTransactionModal(props: NewTransactionModalProps) {
       type,
       category,
     })
-    // .then(response => console.log(response.data))
   }
 
   return (
