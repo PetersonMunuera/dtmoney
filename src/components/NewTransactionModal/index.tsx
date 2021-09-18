@@ -1,4 +1,5 @@
 import { useState, FormEvent } from 'react'
+import { api } from '../../services/api'
 
 import Modal from 'react-modal'
 
@@ -23,12 +24,13 @@ export function NewTransactionModal(props: NewTransactionModalProps) {
   function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault()
 
-    console.log({
+    api.post('transactions', {
       title,
       value,
       type,
       category,
     })
+    // .then(response => console.log(response.data))
   }
 
   return (
