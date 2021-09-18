@@ -1,5 +1,5 @@
-import { useState, FormEvent, useContext } from 'react'
-import { TransactionsContext } from '../../hooks/TransactionsContext'
+import { useState, FormEvent } from 'react'
+import { useTransactions } from "../../hooks/useTransactions";
 
 import Modal from 'react-modal'
 
@@ -20,7 +20,7 @@ export function NewTransactionModal(props: NewTransactionModalProps) {
   const [category, setCategory] = useState('')  
   const [type, setType] = useState('deposit')
 
-  const { createTransaction } = useContext(TransactionsContext)
+  const { createTransaction } = useTransactions()
 
   async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault()
